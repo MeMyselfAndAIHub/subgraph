@@ -1,0 +1,45 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: MeMyselfAndAi
+    network: mumbai
+    source:
+      address: "0xc4787aA24E51a22f92910F97320aA98e167c7695"
+      abi: MeMyselfAndAi
+      startBlock: 36651411
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Medication_Created
+        - Daily_Routine_Created
+        - Appointment_Created
+        - Tag_Created
+        - Medication_Deleted
+        - Daily_Routine_Deleted
+        - Appointment_Deleted
+        - Daily_Reminder_Pushed
+      abis:
+        - name: MeMyselfAndAi
+          file: ./abis/MeMyselfAndAi.json
+      eventHandlers:
+        - event: Medication_Created(address,(uint256,uint256[],string,uint256[],string),uint256)
+          handler: handleMedication_Created
+        - event: Daily_Routine_Created(address,(uint256[],uint256,string),uint256)
+          handler: handleDaily_Routine_Created
+        - event: Appointment_Created(address,(uint256[],uint256,string,string),uint256)
+          handler: handleAppointment_Created
+        - event: Tag_Created(address,uint256,(string,string,uint256))
+          handler: handleTag_Created
+        - event: Medication_Deleted(address,uint256)
+          handler: handleMedication_Deleted
+        - event: Daily_Routine_Deleted(address,uint256)
+          handler: handleDaily_Routine_Deleted
+        - event: Appointment_Deleted(address,uint256)
+          handler: handleAppointment_Deleted
+        - event: Daily_Reminder_Pushed(address,uint256,string)
+          handler: handleDaily_Reminder_Pushed
+      file: ./src/me-myself-and-ai.ts
