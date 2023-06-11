@@ -1,0 +1,44 @@
+Arguments: 
+  /home/franfran/.nvm/versions/node/v19.4.0/bin/node /home/franfran/.nvm/versions/node/v19.4.0/bin/yarn
+
+PATH: 
+  /home/franfran/.vscode-server/bin/b3e4e68a0bc097f0ae7907b217c1119af9e03435/bin/remote-cli:/home/franfran/.local/bin:/home/franfran/.nvm/versions/node/v19.4.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files (x86)/dotnet/:/mnt/c/Users/HP/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/HP/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/mongosh/:/snap/bin:/home/franfran/.foundry/bin:/home/franfran/.foundry/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  19.4.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: getaddrinfo EAI_AGAIN registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26)
+
+npm manifest: 
+  {
+    "name": "memyselffandai",
+    "license": "UNLICENSED",
+    "scripts": {
+      "codegen": "graph codegen",
+      "build": "graph build",
+      "deploy": "graph deploy --node https://api.thegraph.com/deploy/ franfran20/memyselffandai",
+      "create-local": "graph create --node http://localhost:8020/ franfran20/memyselffandai",
+      "remove-local": "graph remove --node http://localhost:8020/ franfran20/memyselffandai",
+      "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 franfran20/memyselffandai",
+      "test": "graph test"
+    },
+    "dependencies": {
+      "@graphprotocol/graph-cli": "0.47.1",
+      "@graphprotocol/graph-ts": "0.29.1"
+    },
+    "devDependencies": { "matchstick-as": "0.5.0" }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
